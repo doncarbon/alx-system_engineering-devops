@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# Bash script that stops 4-to_infinity_and_beyond process.
-# without kill or killall
+# Bash script that send a SIGTERM signal to 7-highlander process.
 
 pkill -f "highlander"
