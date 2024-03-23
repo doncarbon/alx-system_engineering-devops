@@ -9,6 +9,16 @@ This is a 3-server web infrastructure that is secured, monitored, and serves enc
 
 # Details
 
++ Firewalls: Firewalls are added to enhance the security of the infrastructure by controlling incoming and outgoing traffic based on predetermined security rules. Each firewall provides an additional layer of protection against unauthorized access and malicious attacks.
+
++ SSL Certificate and HTTPS: An SSL certificate is added to enable HTTPS, which encrypts the traffic between the client's browser and the web server. This encryption ensures that sensitive information exchanged between the client and the server remains secure from interception or tampering.
+
++ Monitoring Clients: Monitoring clients are installed on each server to collect performance metrics, log data, and other relevant information. These clients send data to a centralized monitoring system (e.g., Sumo Logic) for analysis and alerting. Having monitoring clients on each server allows for comprehensive monitoring of the entire infrastructure.
+
++ Monitoring: Monitoring is used to track the health, performance, and availability of the web infrastructure components. It helps identify issues proactively, optimize performance, and ensure uninterrupted service for users.
+
++ QPS Monitoring: To monitor the web server's Queries Per Second (QPS), you can configure the monitoring tool to track the incoming requests and measure the rate at which the server processes them. This helps identify performance bottlenecks and scale resources accordingly.
+
 + Load Balancer (HAproxy): Added to distribute incoming traffic among multiple web servers, ensuring high availability and scalability.
 
 + Additional Web and Application Servers: Added for redundancy and to handle increased traffic load.
@@ -43,18 +53,8 @@ This is a 3-server web infrastructure that is secured, monitored, and serves enc
 
 ## Issues
 
-# Single Points of Failure (SPOF):
++ Terminating SSL at Load Balancer Level: Terminating SSL at the load balancer exposes decrypted traffic within the internal network, potentially compromising sensitive information if the internal network is compromised.
 
-+ The Load Balancer can become a single point of failure. If it fails, traffic distribution will stop, and the website may become inaccessible.
++ Single MySQL Server for Writes: Having only one MySQL server capable of accepting writes creates a single point of failure. If this server goes down, the application won't be able to write data to the database, leading to service interruptions or data loss.
 
-+ Lack of redundancy for other components such as the database and application servers. If any of these servers fail, it could lead to downtime for the website.
-
-# Security Issues:
-
-+ No firewall mentioned in the infrastructure, leaving it vulnerable to unauthorized access and attacks.
-
-+ Lack of HTTPS encryption leaves data transmission insecure, potentially exposing sensitive information to interception or manipulation.
-
-# No Monitoring:
-
-+ Without monitoring tools in place, it would be difficult to detect and respond to performance issues, security breaches, or infrastructure failures in a timely manner.
++ Uniform Server Components: Using servers with all the same components (database, web server, and application server) might lead to issues if one of the components has a vulnerability or experiences a failure. It's advisable to have a diverse mix of server types to mitigate such risks.
