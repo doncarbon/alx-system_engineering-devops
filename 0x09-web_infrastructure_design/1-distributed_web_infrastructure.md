@@ -5,7 +5,7 @@
 
 # Description
 
-A lot of websites are powered by simple web infrastructure, a lot of time it is composed of a single server with a LAMP stack. This is one server web infrastructure that hosts the website that is reachable via www.foobar.com.
+This is a distributed web infrastructure that atttempts to reduce the traffic to the primary server by distributing some of the load to a replica server with the aid of a server responsible for balancing the load between the 3 servers.
 
 # Details
 
