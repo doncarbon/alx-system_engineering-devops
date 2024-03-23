@@ -3,11 +3,11 @@
 ![Image of a simple web stack](https://github.com/doncarbon/alx-system_engineering-devops/blob/0b9f2c820b6cb798946db562d17c5027da3ec589/0x09-web_infrastructure_design/1-distributed_web_infrastructure.jpg)
 
 
-## Description
+# Description
 
 A lot of websites are powered by simple web infrastructure, a lot of time it is composed of a single server with a LAMP stack. This is one server web infrastructure that hosts the website that is reachable via www.foobar.com.
 
-## Details
+# Details
 
 + Load Balancer (HAproxy): Added to distribute incoming traffic among multiple web servers, ensuring high availability and scalability.
 
@@ -27,13 +27,13 @@ A lot of websites are powered by simple web infrastructure, a lot of time it is 
 
 + Communication with User's Computer: The server communicates with the user's computer over the internet using the HTTP protocol. When a user types www.foobar.com into their browser, the browser sends an HTTP request to the server, which responds with the requested web page.
 
-# Load Balancer Configuration:
+## Load Balancer Configuration:
 
 + Distribution Algorithm: HAproxy is configured with a round-robin distribution algorithm. This algorithm routes each new connection to the next available server in a circular manner, evenly distributing the load among all available servers.
 
 + Active-Active or Active-Passive Setup: The load balancer enables an Active-Active setup, where all web servers are actively serving traffic simultaneously. In Active-Passive setup, only one server is actively serving traffic, while others act as backups and take over only if the active server fails.
 
-# Database Primary-Replica Cluster:
+## Database Primary-Replica Cluster:
 
 + How it Works: In a Primary-Replica (Master-Slave) cluster, the Primary node (Master) handles all write operations and replicates data changes to Replica nodes (Slaves). The Replica nodes serve read-only queries, improving read scalability and providing redundancy in case the Primary node fails.
 
