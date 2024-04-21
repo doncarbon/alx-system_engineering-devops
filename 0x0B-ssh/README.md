@@ -1,7 +1,7 @@
 ## ALX System Engineering DevOps Projects
 
 
-# 0x0A-configuration_management Project tasks folder
+# 0x0B. SSH Project tasks folder
 
 
 *by Hamza YASSINE, SE Student*
